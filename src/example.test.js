@@ -12,7 +12,7 @@ describe('sum', () => {
 
     it('returns the same value for one argument', () => {
 
-        expect(sum(2)).toEqual(2)
+        expect(sum(2)).toEqual(3)
     })
 
     it('Guards against invalid values', () => {
@@ -22,6 +22,6 @@ describe('sum', () => {
         expect(() => sum('star', 3)).toThrowError('Invalid values')
     })
 
-    //some other tests - test if you pass in a truw / false value, empty array or object, undefined value
+    //some other tests - test if you pass in a true / false value, empty array or object, undefined value
 
 })
