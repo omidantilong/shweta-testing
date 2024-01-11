@@ -1,11 +1,11 @@
 export function sum(a, b) {
 
-    if (!isNaN(a) && !b) {
+    if (typeof a === 'number' && !b) {
 
         return a
     }
 
-    if (isNaN(a) || isNaN(b)) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
 
 
         throw new Error('Invalid values')
