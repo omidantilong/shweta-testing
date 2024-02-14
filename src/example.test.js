@@ -3,6 +3,7 @@
 
 import { it, expect, describe } from 'vitest'
 import { sum } from './example'
+import { subtract } from './example'
 
 describe('sum', () => {
 
@@ -35,3 +36,13 @@ describe('sum', () => {
     //some other tests - test if you pass in a true / false value, empty array or object, undefined value
 
 })
+describe('subtract', () => {
+
+    it('subtract the numbers', () => {
+
+        expect(subtract(2, -1, 4)).toEqual(3)
+        expect(subtract(0, 0, 0)).toEqual(0)
+    })
+
+}
+)

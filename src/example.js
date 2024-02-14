@@ -15,3 +15,7 @@ export function sum(a, b) {
 
     return a + b
 }
+
+export function subtract(x, y, z) {
+    return z - x - y
+}
