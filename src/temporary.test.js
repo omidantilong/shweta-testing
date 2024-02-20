@@ -2,8 +2,8 @@
 //and then writing the critiia to perform the function in the example.js fine
 
 import { it, expect, describe } from 'vitest'
-import { sum } from './Math'
-import { subtract } from './Math'
+import { sum } from './temporary'
+import { subtract } from './temporary'
 
 describe('sum', () => {
 
@@ -20,16 +20,16 @@ describe('sum', () => {
         expect(sum(-3)).toEqual(-3)
     })
 
-        / it('Guards against invalid values', () => {
-            const errorString = 'Invalid values'
-            expect(() => sum()).toThrowError(errorString)
-            expect(() => sum('star', 'circle')).toThrowError(errorString)
-            expect(() => sum('star', 3)).toThrowError(errorString)
-            expect(() => sum(true, 3)).toThrowError(errorString)
-            expect(() => sum([], 3)).toThrowError(errorString)
-            expect(() => sum({}, {})).toThrowError(errorString)
-            expect(() => sum({}, undefined)).toThrowError(errorString)
-        })
+    it('Guards against invalid values', () => {
+        const errorString = 'Invalid values'
+        expect(() => sum()).toThrowError(errorString)
+        expect(() => sum('star', 'circle')).toThrowError(errorString)
+        expect(() => sum('star', 3)).toThrowError(errorString)
+        expect(() => sum(true, 3)).toThrowError(errorString)
+        expect(() => sum([], 3)).toThrowError(errorString)
+        expect(() => sum({}, {})).toThrowError(errorString)
+        expect(() => sum({}, undefined)).toThrowError(errorString)
+    })
 
 
 
