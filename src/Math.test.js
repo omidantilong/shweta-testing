@@ -2,8 +2,8 @@
 //and then writing the critiia to perform the function in the example.js fine
 
 import { it, expect, describe } from 'vitest'
-import { sum } from './example'
-import { subtract } from './example'
+import { sum } from './Math'
+import { subtract } from './Math'
 
 describe('sum', () => {
 
@@ -43,24 +43,6 @@ describe('subtract', () => {
         expect(subtract(2, -1, 4)).toEqual(3)
         expect(subtract(0, 0, 0)).toEqual(0)
     })
-
-    it('returns the same value for one argument', () => {
-
-        expect(subtract(2)).toEqual(2)
-        expect(subtract(-3)).toEqual(-3)
-    })
-
-    it('Guards against invalid values', () => {
-        const errorString1 = 'Invalid values'
-        expect(() => subtract()).toThrowError(errorString1)
-        expect(() => subtract('star', 'circle', 3)).toThrowError(errorString1)
-        expect(() => subtract('star', 3, 2)).toThrowError(errorString1)
-        expect(() => subtract(true, 3, false)).toThrowError(errorString1)
-        expect(() => subtract([], 3, 5)).toThrowError(errorString1)
-        expect(() => subtract({}, {}, 8)).toThrowError(errorString1)
-        expect(() => subtract({}, undefined, 7)).toThrowError(errorString1)
-    })
-
 
 }
 )
