@@ -2,8 +2,8 @@
 //and then writing the critiia to perform the function in the example.js fine
 
 import { it, expect, describe } from 'vitest'
-import { sum } from './temporary'
-import { subtract } from './temporary'
+import { sum } from './math'
+import { subtract } from './math'
 
 describe('sum', () => {
 
