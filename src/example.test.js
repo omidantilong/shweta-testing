@@ -4,6 +4,8 @@
 import { it, expect, describe } from 'vitest'
 import { sum } from './example'
 import { subtract } from './example'
+import { square } from './example'
+const errorString = 'Invalid values'
 
 describe('sum', () => {
 
@@ -21,7 +23,6 @@ describe('sum', () => {
     })
 
         / it('Guards against invalid values', () => {
-            const errorString = 'Invalid values'
             expect(() => sum()).toThrowError(errorString)
             expect(() => sum('star', 'circle')).toThrowError(errorString)
             expect(() => sum('star', 3)).toThrowError(errorString)
@@ -62,5 +63,21 @@ describe('subtract', () => {
     })
 
 
+}
+)
+describe('square', () => {
+    it('Squares two numbers', () => {
+        expect(square(-2)).toEqual(4)
+    })
+
+    it('Guards against invalid values', () => {
+        expect(() => square()).toThrowError(errorString)
+        expect(() => square('star', 'circle')).toThrowError(errorString) //Passing more than one value, so this test should fail
+        expect(() => square('star', 3)).toThrowError(errorString)
+        expect(() => square(true, 3)).toThrowError(errorString)
+        expect(() => square([], 3)).toThrowError(errorString)
+        expect(() => square({}, {})).toThrowError(errorString)
+        expect(() => square({}, undefined)).toThrowError(errorString)
+    })
 }
 )

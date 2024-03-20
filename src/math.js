@@ -17,5 +17,11 @@ export function sum(a, b) {
 }
 
 export function subtract(x, y, z) {
+
+    if (typeof x === 'number' && !y && !z) {
+
+        return x
+    }
+
     return z - x - y
 }

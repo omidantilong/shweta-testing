@@ -44,5 +44,11 @@ describe('subtract', () => {
         expect(subtract(0, 0, 0)).toEqual(0)
     })
 
+    it('returns the same value for one argument', () => {
+
+        expect(subtract(2)).toEqual(2)
+        expect(subtract(-3)).toEqual(-3)
+    })
+
 }
 )
