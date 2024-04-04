@@ -2,9 +2,7 @@
 //and then writing the critiia to perform the function in the example.js fine
 
 import { it, expect, describe } from 'vitest'
-import { sum } from './example'
-import { subtract } from './example'
-import { square } from './example'
+import { sum, subtract, square, sumAll } from './example'
 const errorString = 'Invalid values'
 
 describe('sum', () => {
@@ -22,15 +20,15 @@ describe('sum', () => {
         expect(sum(-3)).toEqual(-3)
     })
 
-        / it('Guards against invalid values', () => {
-            expect(() => sum()).toThrowError(errorString)
-            expect(() => sum('star', 'circle')).toThrowError(errorString)
-            expect(() => sum('star', 3)).toThrowError(errorString)
-            expect(() => sum(true, 3)).toThrowError(errorString)
-            expect(() => sum([], 3)).toThrowError(errorString)
-            expect(() => sum({}, {})).toThrowError(errorString)
-            expect(() => sum({}, undefined)).toThrowError(errorString)
-        })
+    it('Guards against invalid values', () => {
+        expect(() => sum()).toThrowError(errorString)
+        expect(() => sum('star', 'circle')).toThrowError(errorString)
+        expect(() => sum('star', 3)).toThrowError(errorString)
+        expect(() => sum(true, 3)).toThrowError(errorString)
+        expect(() => sum([], 3)).toThrowError(errorString)
+        expect(() => sum({}, {})).toThrowError(errorString)
+        expect(() => sum({}, undefined)).toThrowError(errorString)
+    })
 
 
 
@@ -71,13 +69,22 @@ describe('square', () => {
     })
 
     it('Guards against invalid values', () => {
+        const errorString1 = 'Too many values'
         expect(() => square()).toThrowError(errorString)
-        expect(() => square('star', 'circle')).toThrowError(errorString) //Passing more than one value, so this test should fail
-        expect(() => square('star', 3)).toThrowError(errorString)
-        expect(() => square(true, 3)).toThrowError(errorString)
-        expect(() => square([], 3)).toThrowError(errorString)
-        expect(() => square({}, {})).toThrowError(errorString)
-        expect(() => square({}, undefined)).toThrowError(errorString)
     })
+
+    it('Guards against too many values', () => {
+        const errorString1 = 'Too many values'
+        expect(() => square('star', 'circle')).toThrowError(errorString1)
+        expect(() => square(3, 3)).toThrowError(errorString1)
+    }
+    )
 }
 )
+
+describe('sumAll', () => {
+    it('Adds all the numbers', () => {
+        expect(sumAll(1, 2, 3, 4)).toEqual(10)
+    })
+
+})

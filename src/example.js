@@ -32,13 +32,19 @@ export function subtract(x, y, z) {
 }
 
 export function square(d) {
+    if (arguments.length > 1) {
+        throw new Error('Too many values')
+    }
     if (typeof d !== 'number') {
         throw new Error('Invalid values')
     }
-    if (typeof d !== 'number'
-        //&& e !== 'number'
-    ) {
-        throw new Error('Too many values') //Shouldn't this line throw an error because 'e' is not defined in the function?
-    }
+
     return d * d
+}
+//re-write this for sub, multiplication etc
+export function sumAll(...numbers) {
+    let f = 0
+    numbers.forEach((number) => { f += number }) //if line 46,47 can be written in a more concise way
+
+    return f
 }
