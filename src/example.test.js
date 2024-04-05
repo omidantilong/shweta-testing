@@ -2,7 +2,7 @@
 //and then writing the critiia to perform the function in the example.js fine
 
 import { it, expect, describe } from 'vitest'
-import { sum, subtract, square, sumAll } from './example'
+import { sum, subtract, square, sumAll, mulAll } from './example'
 const errorString = 'Invalid values'
 
 describe('sum', () => {
@@ -85,6 +85,13 @@ describe('square', () => {
 describe('sumAll', () => {
     it('Adds all the numbers', () => {
         expect(sumAll(1, 2, 3, 'ring', 5, 'square')).toEqual(11)
+    })
+
+})
+
+describe('mulAll', () => {
+    it('Multiplies all the numbers', () => {
+        expect(mulAll(1, 2, 3, 'ring', 5, 'square')).toEqual(30)
     })
 
 })

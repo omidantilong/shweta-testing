@@ -51,3 +51,13 @@ export function sumAll(...numbers) {
     }) //if this can be written in a more concise way
     return f
 }
+
+export function mulAll(...numbers1) {
+    let g = 1
+    numbers1.forEach((num) => {
+        if (typeof num === 'number') {
+            g *= num
+        }
+    })
+    return g
+}
