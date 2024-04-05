@@ -41,10 +41,13 @@ export function square(d) {
 
     return d * d
 }
-//re-write this for sub, multiplication etc
+// //re-write this for sub, multiplication etc
 export function sumAll(...numbers) {
     let f = 0
-    numbers.forEach((number) => { f += number }) //if line 46,47 can be written in a more concise way
-
+    numbers.forEach((number) => {
+        if (typeof number === 'number') {
+            f += number
+        }
+    }) //if this can be written in a more concise way
     return f
 }

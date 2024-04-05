@@ -84,7 +84,7 @@ describe('square', () => {
 
 describe('sumAll', () => {
     it('Adds all the numbers', () => {
-        expect(sumAll(1, 2, 3, 4)).toEqual(10)
+        expect(sumAll(1, 2, 3, 'ring', 5, 'square')).toEqual(11)
     })
 
 })
