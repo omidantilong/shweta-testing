@@ -89,9 +89,15 @@ describe('sumAll', () => {
 
 })
 
-describe('mulAll', () => {
+describe.only('mulAll', () => {
     it('Multiplies all the numbers', () => {
-        expect(mulAll(1, 2, 3, 'ring', 5, 'square')).toEqual(30)
+        expect(mulAll(1, 2, 3, 5)).toEqual(30)
     })
+
+    it('Guards against invalid values', () => {
+        expect(mulAll(1, 2, 3, 'ring', 5, 'square')).toThrowError(errorString)
+    }
+
+    )
 
 })

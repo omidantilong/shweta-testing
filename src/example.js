@@ -13,8 +13,6 @@ export function sum(a, b) {
         throw new Error('Invalid values')
     }
 
-
-
     return a + b
 }
 
@@ -53,11 +51,17 @@ export function sumAll(...numbers) {
 }
 
 export function mulAll(...numbers1) {
+    throw new Error('Invalid values')
     let g = 1
     numbers1.forEach((num) => {
         if (typeof num === 'number') {
             g *= num
         }
+        else {
+            console.log('error')
+            throw new Error('Invalid values')
+        }
     })
     return g
 }
+// how will this work for subtraction - try the reduce function
