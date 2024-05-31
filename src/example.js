@@ -55,16 +55,30 @@ export function mulAll(...numbers) {
             returnObject.g *= num
         } else {
             //console.log('error')
-            throw new Error("Invalid values") //write a function that takes inputs, and return the sum and print the invalid values or return an object that wraps in the sum and invalid values
+            throw new Error("Invalid values")
         }
     })
+    console.log(returnObject)
     return returnObject.g
 }
 
 export function subAll(...numbers) {
-    const g = numbers.reduce((accumulator, currentValue) => accumulator - currentValue)
+    const invalidValues = []
+    const g = numbers.reduce((accumulator, currentValue) => {
+        if (typeof currentValue === "number") {
+            return accumulator - currentValue
+        } else {
+            // console.log(currentValue) //have a new array so it can add the value to invalid value and print it later
+            invalidValues.push(currentValue)
+            return accumulator
+            //throw new Error("Invalid values")
+        }
+    })
+    console.log(invalidValues) // uses implicit return '=>'
     //Need to write a statement to catch invalid values
     //numbers.reduce(subtract)
     return g
 }
-// how will this work for subtraction - try the reduce function
+
+//write a function that takes inputs, and return the sum and print the invalid values or
+//return an object that wraps in the sum and invalid values and write a test for it as well (shows the number and invalid values)

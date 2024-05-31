@@ -76,7 +76,7 @@ describe("sumAll", () => {
     })
 })
 
-describe("mulAll", () => {
+describe.only("mulAll", () => {
     it("Multiplies all the numbers", () => {
         expect(mulAll(1, 2, 3, 5)).toEqual(30)
     })
@@ -87,11 +87,11 @@ describe("mulAll", () => {
     })
 })
 
-describe.only("subAll", () => {
+describe("subAll", () => {
     it("Calculates the difference between all the numbers", () => {
         expect(subAll(-10, 1, 3, 6)).toEqual(-20)
     })
     it("Guards against invalid values", () => {
-        expect(subAll(1, 2, 3, "ring", 5, "square")).toThrowError(errorString)
+        expect(() => subAll(1, 2, 3, "ring", 5, "square")).toThrowError(errorString)
     })
 })
